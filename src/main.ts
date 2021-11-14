@@ -7,7 +7,9 @@ import store from "./store";
 import "./assets/js/rem";
 import "./routerGuard";
 import 'vant/lib/index.css'; // 全局引入样式
+import  * as echarts from "echarts";
 const app = createApp(App);
+app.config.globalProperties.$echarts = echarts;//全局使用
 app.use(router);
 app.use(store);
 app.use(Vant);

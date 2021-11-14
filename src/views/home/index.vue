@@ -19,23 +19,22 @@
         :key="item.title"
         :name="index"
       >
-        {{ index }}
+      <div class="tab-main">
         <component :is="item.tab"></component>
+      </div>
       </van-tab>
     </van-tabs>
   </div>
 </template>
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { ref } from "vue";
 import tab1 from "../template/tab1.vue";
 import tab2 from "../template/tab2.vue";
 import tab3 from "../template/tab3.vue";
 import tab4 from "../template/tab4.vue";
 import tab5 from "../template/tab5.vue";
 import tab6 from "../template/tab6.vue";
-
 const active = ref(0);
-let module = tab1;
 const tabList = [
   { title: "概况", tab: tab1 },
   { title: "业绩", tab: tab2 },
@@ -95,6 +94,9 @@ const clickTab = (name: number, title: string) => {};
         }
       }
     }
+  }
+  .tab-main{
+    padding:.3rem .4rem;
   }
 }
 </style>
